@@ -2,10 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace 'com.google.ar.core.codelabs.hellogeospatial'
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.google.ar.core.codelabs.hellogeospatial"
 
+        manifestPlaceholders = [MAPS_API_KEY: project.findProperty("MAPS_API_KEY") ?: "AIzaSyAox54GHSXDGKpuCDo_PltFki0hyJUXhrg"]
         // AR Optional apps must declare minSdkVersion >= 14.
         // AR Required apps must declare minSdkVersion >= 24.
         minSdkVersion 24
